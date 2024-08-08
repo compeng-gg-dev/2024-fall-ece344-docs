@@ -6,22 +6,27 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
+const organizationName = 'compeng-gg-dev';
+const projectName = '2024-fall-ece344-docs';
+const courseCode = 'ECE344';
+const courseName = 'Operating Systems';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
-  url: 'https://compeng-gg-dev.github.io/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/2024-fall-ece344-docs/',
+  title: courseCode,
+  tagline: courseName,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'compeng-gg-dev', // Usually your GitHub org/user name.
-  projectName: '2024-fall-ece344-docs', // Usually your repo name.
+  organizationName: organizationName, // Usually your GitHub org/user name.
+  projectName: projectName, // Usually your repo name.
+
+  // Set the production url of your site here
+  url: `https://${organizationName}.github.io/`,
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: `/${projectName}/`,
+
   trailingSlash: true,
 
   onBrokenLinks: 'throw',
@@ -46,7 +51,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/compeng-gg-dev/2024-fall-ece344-docs/tree/main/',
+            `https://github.com/${organizationName}/${projectName}/tree/main/`,
         },
         blog: false,
       }),
@@ -59,19 +64,10 @@ const config = {
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'ECE344',
+        title: courseCode,
         items: [
-          /*
           {
-            type: 'docSidebar',
-            sidebarId: 'labsSidebar',
-            position: 'left',
-            label: 'Labs',
-          },
-          */
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/compeng-gg-dev/2024-fall-ece344-docs',
+            href: `https://github.com/${organizationName}/${projectName}`,
             label: 'GitHub',
             position: 'right',
           },
@@ -81,51 +77,6 @@ const config = {
         sidebar: {
           hideable: true,
         },
-      },
-      footer: {
-        //style: 'dark',
-        /*links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],*/
-        copyright: `Copyright © ${new Date().getFullYear()} Jonathan Eyolfson. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
