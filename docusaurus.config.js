@@ -41,22 +41,14 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/compeng-gg-dev/2024-fall-ece344-docs/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        theme: {
-          customCss: './src/css/custom.css',
-        },
+        blog: false,
       }),
     ],
   ],
@@ -65,31 +57,34 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
+        title: 'ECE344',
         items: [
+          /*
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'labsSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Labs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          */
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/compeng-gg-dev/2024-fall-ece344-docs',
             label: 'GitHub',
             position: 'right',
           },
         ],
       },
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       footer: {
-        style: 'dark',
-        links: [
+        //style: 'dark',
+        /*links: [
           {
             title: 'Docs',
             items: [
@@ -129,13 +124,18 @@ const config = {
               },
             ],
           },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        ],*/
+        copyright: `Copyright © ${new Date().getFullYear()} Jonathan Eyolfson. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      }
     }),
 };
 
